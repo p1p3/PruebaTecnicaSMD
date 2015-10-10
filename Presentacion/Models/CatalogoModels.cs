@@ -12,6 +12,7 @@ namespace Presentacion.Models
     public class CatalogoModels
 
     {
+        public CatalogoModels() { }
 
         public CatalogoModels(Catalogo catalogoDominio) {
             this.CatalogoId = catalogoDominio.CatalogoId;
