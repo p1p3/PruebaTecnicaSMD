@@ -1,0 +1,39 @@
+﻿@model  Presentacion.Models.ProductoModels
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+    <h2>@Html.DisplayFor(model => model.Titulo)</h2>
+    <hr />
+
+    <div class="row" style="max-height:150px;">
+        <div class="col-xs-3">
+            <a href="#" class="thumbnail">
+                <img src="~/Images/@Model.RutaImagen" alt="Foto catálogo" style=" width: 180px;  height: 180px;" />
+            </a>
+        </div>
+        <div class="col-xs-9">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2>Descripción:</h2>
+                </div>
+                <div class="col-xs-12">
+                    <h6>@Html.DisplayFor(model => model.Descripcion)</h6>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center ">
+            @Html.ActionLink("Volver", "Details", "Catalogo", new { id = Model.CatalogoId }, new { @class = "btn btn-primary", @style = "color:white" })
+        </div>
+    </div>
+
+</div>
+<p>
+
+
+</p>
