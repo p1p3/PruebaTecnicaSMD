@@ -50,9 +50,9 @@ namespace PruebaTecnica.Core.Servicios.Implementaciones
             return UnitOfWork.ProductoRepositorio.FindById(id);
         }
 
-        public List<Producto> PageAndFilter(int skip, int take, Expression<Func<Producto, bool>> filter = null, Func<IQueryable<Producto>, IOrderedQueryable<Producto>> orderBy = null)
+        public List<Producto> PageAndFilter(int skip, int take, Expression<Func<Producto, bool>> filter = null, Func<IQueryable<Producto>, IOrderedQueryable<Producto>> orderBy = null, Expression<Func<Producto, object>> include = null)
         {
-            return UnitOfWork.ProductoRepositorio.PageAndFilter(skip, take, filter, orderBy);
+            return UnitOfWork.ProductoRepositorio.PageAndFilter(skip, take, filter, orderBy,include);
         }
     }
 }

@@ -14,6 +14,6 @@ namespace PruebaTecnica.Core.Servicios.Interfaces
         void CrearProducto(Producto producto);
         void ActualizarProducto(Producto producto);
         void BorrarProducto(Producto producto);
-        List<Producto> PageAndFilter(int skip, int take, Expression<Func<Producto, bool>> filter = null, Func<IQueryable<Producto>, IOrderedQueryable<Producto>> orderBy = null);
+        List<Producto> PageAndFilter(int skip, int take, Expression<Func<Producto, bool>> filter = null, Func<IQueryable<Producto>, IOrderedQueryable<Producto>> orderBy = null, Expression<Func<Producto, object>> include = null);
     }
 }

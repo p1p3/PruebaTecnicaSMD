@@ -18,22 +18,29 @@ namespace Data.EntityFramework.Utils
             Catalogo Catalogo = new Catalogo { NombreCatalogo = "Catálogo 1" };
             context.Catalogos.Add(Catalogo);
 
-
-            var productos = new List<Producto>
+            int CantidadProductos = 10;
+            Producto producto;
+            var productos = new List<Producto>();
+            for (int i = 0; i < CantidadProductos; i++)
             {
-              new Producto {Titulo = "Producto1",Descripcion="DescripcionProducto2",RutaImagen ="asdad1",CatalogoId = Catalogo.CatalogoId,catalogo = Catalogo },
-              new Producto {Titulo = "Producto2",Descripcion="DescripcionProducto1",RutaImagen ="asdad2",CatalogoId = Catalogo.CatalogoId,catalogo = Catalogo },
-              new Producto {Titulo = "Producto3",Descripcion="DescripcionProducto3",RutaImagen ="asdad3",CatalogoId = Catalogo.CatalogoId,catalogo = Catalogo },
-              new Producto {Titulo = "Producto4",Descripcion="DescripcionProducto4",RutaImagen ="asdad4",CatalogoId = Catalogo.CatalogoId,catalogo = Catalogo },
-              new Producto {Titulo = "Producto5",Descripcion="DescripcionProducto5",RutaImagen ="asdad5",CatalogoId = Catalogo.CatalogoId,catalogo = Catalogo },
-              new Producto {Titulo = "Producto6",Descripcion="DescripcionProducto6",RutaImagen ="asdad6",CatalogoId = Catalogo.CatalogoId,catalogo = Catalogo },
-              new Producto {Titulo = "Producto7",Descripcion="DescripcionProducto7",RutaImagen ="asdad7",CatalogoId = Catalogo.CatalogoId,catalogo = Catalogo },
-              new Producto {Titulo = "Producto9",Descripcion="DescripcionProducto9",RutaImagen ="asdad9",CatalogoId = Catalogo.CatalogoId,catalogo = Catalogo },
-              new Producto {Titulo = "Producto10",Descripcion="DescripcionProducto10",RutaImagen ="asdad10",CatalogoId = Catalogo.CatalogoId,catalogo = Catalogo },
-            };
+                producto = new Producto()
+                {
+                    Titulo = "Producto" + i,
+                    Precio = i,
+                    Descripcion = "DescripcionProducto" + i,
+                    Categoria = "Categoria" + i,
+                    RutaImagen = "none",
+                    catalogo = Catalogo
+
+                };
+                productos.Add(producto);
+            }
+
+
+
             context.Productos.AddRange(productos);
 
             base.Seed(context);
-                    }
+        }
     }
 }

@@ -22,10 +22,16 @@ namespace Data.EntityFramework.Fachada
         static FachadaDominio()
         {
             Database.SetInitializer(new InicializadorDB());
+
         }
 
         public FachadaDominio(string nameOrConnectionString = "PruebaTecnicaSMD") : base(nameOrConnectionString)
         {
+            //No crea un proxy del objeto para poder serializarlo
+            Configuration.ProxyCreationEnabled = false;
+            //Deshabilitamos el lazyloading
+            Configuration.LazyLoadingEnabled = false;
+
             Productos = base.Set<Producto>();
             Catalogos = base.Set<Catalogo>();
         }

@@ -4,29 +4,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PruebaTecnica.Core.Productos;
+using System.Runtime.Serialization;
 
 namespace PruebaTecnica.Core.Catalogos
 {
-   public class Catalogo
+    [DataContract(IsReference = true)]
+    public class Catalogo
     {
 
         public Catalogo() { }
 
+        [DataMember]
         public int CatalogoId { get; set; }
+
+        [DataMember]
         public string NombreCatalogo { get; set; }
 
+        [DataMember]
         private ICollection<Producto> _productos;
-        public virtual ICollection<Producto> Productos {
+        public virtual ICollection<Producto> Productos
+        {
             get
             {
-                if (_productos == null) {
+                if (_productos == null)
+                {
                     _productos = new List<Producto>();
                 }
                 return _productos;
             }
 
-            set {
+            set
+            {
                 _productos = value;
-            } }
+            }
+        }
     }
 }

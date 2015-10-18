@@ -21,7 +21,7 @@ namespace Presentacion.Controllers
         // GET: Catalogo
         public ActionResult Index()
         {
-            return View(CatalogoServicio.PageAndFilter(0,0));
+            return View(CatalogoServicio.PageAndFilter(0,0,null,null,(x => x.Productos)));
         }
 
         // GET: Catalogo/Details/5

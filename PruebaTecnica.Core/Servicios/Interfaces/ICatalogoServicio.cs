@@ -14,6 +14,6 @@ namespace PruebaTecnica.Core.Servicios.Interfaces
         void CrearCatalogo(Catalogo Catalogo);
         void ActualizarCatalogo(Catalogo catalgo);
         void BorrarCatalogo(Catalogo catalogo);
-        List<Catalogo> PageAndFilter(int skip, int take, Expression<Func<Catalogo, bool>> filter = null, Func<IQueryable<Catalogo>, IOrderedQueryable<Catalogo>> orderBy = null);
+        List<Catalogo> PageAndFilter(int skip, int take, Expression<Func<Catalogo, bool>> filter = null, Func<IQueryable<Catalogo>, IOrderedQueryable<Catalogo>> orderBy = null, Expression<Func<Catalogo, object>> include = null);
     }
 }

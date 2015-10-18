@@ -39,11 +39,23 @@ namespace Data.EntityFramework.MapeoDb
                 HasMaxLength(1000).
                 IsRequired();
 
-            Property(x => x.Descripcion).
+            Property(x => x.RutaImagen).
                 HasColumnName("RutaImagen").
                 HasColumnType("nvarchar").
                 HasMaxLength(1000).
                 IsRequired();
+
+            Property(x => x.Categoria).
+              HasColumnName("Categoria").
+              HasColumnType("nvarchar").
+              HasMaxLength(1000).
+              IsRequired();
+
+            Property(x => x.Precio).
+              HasColumnName("Precio").
+              HasColumnType("decimal").
+              HasPrecision(18,0).
+              IsRequired();
 
             HasRequired(x => x.catalogo).
                 WithMany(x => x.Productos).

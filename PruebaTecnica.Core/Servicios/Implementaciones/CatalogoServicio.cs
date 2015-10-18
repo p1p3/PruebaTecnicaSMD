@@ -44,9 +44,9 @@ namespace PruebaTecnica.Core.Servicios.Interfaces
             return UnitOfWork.CatalogoRepositorio.FindById(id);
         }
 
-        public List<Catalogo> PageAndFilter(int skip, int take, Expression<Func<Catalogo, bool>> filter = null, Func<IQueryable<Catalogo>, IOrderedQueryable<Catalogo>> orderBy = null)
+        public List<Catalogo> PageAndFilter(int skip, int take, Expression<Func<Catalogo, bool>> filter = null, Func<IQueryable<Catalogo>, IOrderedQueryable<Catalogo>> orderBy = null, Expression<Func<Catalogo, object>> include = null)
         {
-            return UnitOfWork.CatalogoRepositorio.PageAndFilter(skip, take, filter, orderBy);
+            return UnitOfWork.CatalogoRepositorio.PageAndFilter(skip, take, filter, orderBy,include);
         }
     }
 }

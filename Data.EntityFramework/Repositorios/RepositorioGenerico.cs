@@ -40,7 +40,7 @@ namespace Data.EntityFramework.Repositorios
             return SetDb.Find(id);
         }
 
-        public List<TEntity> PageAndFilter(int skip, int take, Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null)
+        public List<TEntity> PageAndFilter(int skip, int take, Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, Expression<Func<TEntity, object>> include = null )
         {
             IQueryable<TEntity> query = SetDb;
 
@@ -49,6 +49,12 @@ namespace Data.EntityFramework.Repositorios
                 query = query.Where(filter);
             }
 
+            if (include != null)
+            {
+                
+                query = query.Include(include);
+
+            }
 
             if (orderBy != null)
             {
