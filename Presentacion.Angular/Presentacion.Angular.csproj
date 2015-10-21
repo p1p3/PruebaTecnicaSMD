@@ -66,6 +66,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app.html" />
+    <Content Include="controllers\sportsStore.js" />
     <Content Include="packages.config" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
@@ -109,7 +111,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="components\" />
-    <Folder Include="controllers\" />
     <Folder Include="filters\" />
     <Folder Include="ngmodules\" />
     <Folder Include="views\" />
