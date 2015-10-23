@@ -7,6 +7,7 @@ using System.Web.Http;
 using PruebaTecnica.Core.UnitOfWork;
 using PruebaTecnica.Core.Productos;
 using PruebaTecnica.Core.Servicios.Interfaces;
+using WebAPI.Models;
 
 namespace WebAPI.Controllers
 {
@@ -20,14 +21,21 @@ namespace WebAPI.Controllers
 
 
         // GET api/Productos
-        public IEnumerable<Producto> Get()
+        public IEnumerable<ProductoModels.ProductoListar> Get()
         {
+            List<ProductoModels.ProductoListar> ProductosRetorno = new List<ProductoModels.ProductoListar>();
+
             var Productos = _ProductoServicio.PageAndFilter(0, 0,null,null,(x => x.catalogo));
 
             if (Productos == null || Productos.Count == 0 )
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
-            return Productos;
+            foreach (Producto producto in Productos)
+            {
+                ProductosRetorno.Add(new ProductoModels.ProductoListar(producto));
+            }
+
+            return ProductosRetorno;
         }
 
 

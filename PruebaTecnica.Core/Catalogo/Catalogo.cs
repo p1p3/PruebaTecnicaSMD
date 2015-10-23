@@ -1,26 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using PruebaTecnica.Core.Productos;
-using System.Runtime.Serialization;
+
 
 namespace PruebaTecnica.Core.Catalogos
 {
-    [DataContract(IsReference = true)]
+   
     public class Catalogo
     {
 
         public Catalogo() { }
-
-        [DataMember]
+               
         public int CatalogoId { get; set; }
 
-        [DataMember]
         public string NombreCatalogo { get; set; }
 
-        [DataMember]
         private ICollection<Producto> _productos;
         public virtual ICollection<Producto> Productos
         {
