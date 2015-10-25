@@ -67,12 +67,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.html" />
+    <Content Include="components\cart\cart.js" />
+    <Content Include="components\cart\cartSummary.html" />
+    <Content Include="controllers\checkoutControllers.js" />
     <Content Include="controllers\productListControllers.js" />
     <Content Include="controllers\sportsStore.js" />
     <Content Include="filters\customFilters.js" />
+    <Content Include="index.html" />
     <Content Include="packages.config" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <None Include="Properties\PublishProfiles\AngularPrueba.pubxml" />
+    <None Include="Properties\PublishProfiles\PruebaWepAPIabcd1.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -106,15 +112,15 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="views\checkoutSummary.html" />
+    <Content Include="views\ProductList.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="components\" />
     <Folder Include="ngmodules\" />
-    <Folder Include="views\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
