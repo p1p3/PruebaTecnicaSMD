@@ -78,6 +78,7 @@
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Properties\PublishProfiles\AngularPrueba.pubxml" />
+    <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Properties\PublishProfiles\PruebaWepAPIabcd1.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
